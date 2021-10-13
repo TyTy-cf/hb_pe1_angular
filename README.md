@@ -1,27 +1,49 @@
-# Hbpe1clermont
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
+# Exercices Syntaxe Angular
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### 1. Faire un compteur
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Il commence à 0
+- On doit pouvoir l'incrémenter de 1 et de 5 (en positif et négatif)
+- On doit pouvoir le reset (retour à 0)
+- De plus, il change de couleur en fonction de sa valeur :
+  - 0 : jaune
+  - Entre 1 et 15, il sera vert clair (#4af778)
+  - Entre 16 et 25, il sera vert (#00ff44)
+  - 26 et plus, il sera vert foncé (#009c29)
+  - Entre -1 et -15, il sera rouge clair (#c23844)
+  - Entre -16 et -25, il sera rouge (#ff0016)
+  - -26 et plus, il sera rouge foncé (#ab000f)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 2. Students
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Vous afficherez les Student avec leur moyenne dans une table HTML.
+Vous aurez besoin de reprendre des éléments fait dans le src/index.ts :
+- le tableau de **Student**
+- l'interface **Student**
+- la méthode **calcAverage**
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 2. Yatzee... le retour
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Je vais modifier la classe Dice pour qu'elle introduise des images des valeurs des dés.
+
+Vous devrez afficher les images des dés dans l'HTML.
+
+
+### 3. Le jeu d'échec
+
+
+Nous inclurons dans un premier temps les images des pièces du jeu d'échec.
+Pour cela il faudra ajouter un attribut dans la classe "Piece" de nom "image" et de type string.
+(Inspirez vous des dés du Yatzee)
+
+Les images seront initialisés par défaut, dans leur classe respective.
+
+Vous afficherez ensuite le plateau du jeu d'échec en HTML avec ses cases et les images de ses pièces.
+

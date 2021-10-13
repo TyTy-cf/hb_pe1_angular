@@ -1,0 +1,28 @@
+
+body {
+  background-color: $main-background-color;
+  font-size: $font-size;
+}
+
+button {
+  background-color: $button-background-color-l-40;
+  border: $border-button;
+  padding: 0.25em 0.8em;
+  cursor: pointer;
+  border-radius: 0.3em;
+
+  &:hover {
+    background-color: lightseagreen;
+    color: $main-background-color;
+  }
+}
+
+.lowPoints {
+  background-color: coral;
+  color: $main-background-color;
+}
+
+.highPoints {
+  background-color: darkgreen;
+  color: $main-background-color;
+}

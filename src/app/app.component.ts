@@ -61,9 +61,33 @@ export class AppComponent {
   add(value: number): void {
     this.compteur += value;
   }
+
+  /***********************************************/
+  /**************** Exo - Compteur ***************/
+  /***********************************************/
+
+  students: Array<Student> = [
+    { name: 'Albert', grades: [12, 8, 9, 7, 13] },
+    { name: 'Vincent', grades: [14, 13, 12, 11, 10] },
+    { name: 'Michel', grades: [17, 16, 15, 18, 13] },
+  ];
+
+  calcAverage(arrayGrades: Array<number>): number {
+    let sum: number = 0;
+    for (const grade of arrayGrades) {
+      sum += grade;
+    }
+    return sum / arrayGrades.length;
+  }
+
 }
 
 interface ScrabbleCount {
   point: number;
   alpha: Array<string>;
+}
+
+interface Student {
+  name: string;
+  grades: Array<number>;
 }

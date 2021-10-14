@@ -59,4 +59,16 @@ p {
   flex: 20%;
 }
 
+.table {
+  width: 100%;
+  text-align: center;
+
+  thead > tr > th {
+    border-bottom: $border-button;
+  }
+
+  tbody > tr > td {
+    border-bottom: $border-button;
+  }
+}
 

@@ -47,6 +47,14 @@ export class AppComponent {
   getPointUnits(point: number): string {
     return point + 'pts';
   }
+
+  /***********************************************/
+  /**************** Exo - Compteur ***************/
+  /***********************************************/
+
+  compteur: number = 0;
+
+
 }
 
 interface ScrabbleCount {

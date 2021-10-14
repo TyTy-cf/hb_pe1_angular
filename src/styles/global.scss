@@ -10,11 +10,22 @@ button {
   padding: 0.25em 0.8em;
   cursor: pointer;
   border-radius: 0.3em;
+  width: 100%;
 
   &:hover {
     background-color: lightseagreen;
     color: $main-background-color;
   }
+}
+
+p {
+  margin: 0;
+}
+
+.compteur {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 600;
 }
 
 .lowPoints {
@@ -26,3 +37,26 @@ button {
   background-color: darkgreen;
   color: $main-background-color;
 }
+
+.global-container {
+  width: 50%;
+
+  @media (max-width: 500px) {
+    width: 70%;
+  }
+
+  @media (max-width: 300px) {
+    width: 100%;
+  }
+}
+
+.container-compteur {
+  display: flex;
+}
+
+.col-20 {
+  width: 20%;
+  flex: 20%;
+}
+
+

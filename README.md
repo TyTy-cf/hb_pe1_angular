@@ -28,7 +28,7 @@ Vous aurez besoin de reprendre des éléments fait dans le src/index.ts :
 - la méthode **calcAverage**
 
 
-### 2. Yatzee... le retour
+### 3. Yatzee... le retour
 
 
 Je vais modifier la classe Dice pour qu'elle introduise des images des valeurs des dés.
@@ -36,7 +36,7 @@ Je vais modifier la classe Dice pour qu'elle introduise des images des valeurs d
 Vous devrez afficher les images des dés dans l'HTML.
 
 
-### 3. Le jeu d'échec
+### 4. Le jeu d'échec
 
 
 Nous inclurons dans un premier temps les images des pièces du jeu d'échec.

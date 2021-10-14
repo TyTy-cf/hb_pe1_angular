@@ -54,7 +54,13 @@ export class AppComponent {
 
   compteur: number = 0;
 
+  reset(): void {
+    this.compteur = 0
+  }
 
+  add(value: number): void {
+    this.compteur += value;
+  }
 }
 
 interface ScrabbleCount {

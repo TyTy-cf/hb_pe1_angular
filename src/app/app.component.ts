@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Dice} from "../models/yatzee/dice";
+import {Yahtzee} from "../models/yatzee/yahtzee";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,6 @@ import {Dice} from "../models/yatzee/dice";
 export class AppComponent {
 
   title = 'App Root Component';
-  firstApp = 'Première application Angular de la PE1 Clermont';
   dice: Dice = new Dice();
   headerColor: string = '#fc03a5';
 
@@ -79,6 +79,12 @@ export class AppComponent {
     }
     return sum / arrayGrades.length;
   }
+
+  /***********************************************/
+  /**************** Exo - Yahtzee ***************/
+  /***********************************************/
+
+  yatzee: Yahtzee = new Yahtzee();
 
 }
 

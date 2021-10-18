@@ -38,18 +38,6 @@ p {
   color: $main-background-color;
 }
 
-.global-container {
-  width: 50%;
-
-  @media (max-width: 500px) {
-    width: 70%;
-  }
-
-  @media (max-width: 300px) {
-    width: 100%;
-  }
-}
-
 .container-compteur {
   display: flex;
 }
@@ -61,10 +49,6 @@ p {
     width: 100%;
     height: auto;
   }
-}
-
-.mt-2 {
-  margin-top: 1em;
 }
 
 .table {

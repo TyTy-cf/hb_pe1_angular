@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoursComponent } from './cours/cours.component';
+import { MultTableComponent } from './mult-table/mult-table.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CoursComponent,
+    MultTableComponent
   ],
   imports: [
     BrowserModule,

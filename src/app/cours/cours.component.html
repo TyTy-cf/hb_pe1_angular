@@ -1,0 +1,42 @@
+<div  class="teal">
+
+  <h1>{{getTitle()}}</h1>
+
+  <p *ngIf="dice.value === 6">
+    SUPER JET DE 6 : {{dice.value}}
+  </p>
+
+  <p *ngIf="dice.value !== 6; else theSix">
+    Dé : {{dice.value}}
+  </p>
+
+  <button (click)="rerollDice()">Relancer le dé</button>
+
+  <ng-template #theSix>
+    <p>Bravo vous avez fait un 6 !</p>
+  </ng-template>
+
+  <button (click)="displayTable()">{{labelButton}}</button>
+  <table [hidden]="!tableDisplayed">
+    <thead>
+      <tr>
+        <th>Points</th>
+        <th>Lettres</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let score of scores"
+          class="lowPoints"
+          [class.highPoints]="score.point >= 8"
+      >
+        <td [title]="score.point">{{ getPointUnits(score.point) }}</td>
+        <td>
+          <span *ngFor="let alpha of score.alpha">{{alpha}} </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

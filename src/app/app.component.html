@@ -103,5 +103,6 @@
   </div>
   <div class="mt-2">
     <button (click)="yatzee.throwDice()">Lancer dés</button>
+    <button [hidden]="yatzee.myDice.length === 0" (click)="yatzee.rerollDice()">Relancer les dés</button>
   </div>
 </div>

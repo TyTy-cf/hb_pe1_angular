@@ -1,82 +1,8 @@
 
-<nav class="mt-2 ms-2 mb-5">
-  <div class="btn-group">
-    <a class="btn btn-success" routerLink="/angular/cours">Cours</a>
-    <a class="btn btn-warning" routerLink="/table-multiplication/9">Table multiplication</a>
-  </div>
-</nav>
+<app-navbar></app-navbar>
 
 <div class="container">
   <router-outlet></router-outlet>
 </div>
-
-<!--<div class="global-container pink">-->
-<!--  <div class="container-compteur">-->
-<!--    <div class="col-20">-->
-<!--      &lt;!&ndash; on définit l'action du clic sur le bouton => fonction add qui sera appelée &ndash;&gt;-->
-<!--      <button (click)="add(-5)">&#45;&#45;</button>-->
-<!--    </div>-->
-<!--    <div class="col-20">-->
-<!--      <button (click)="add(-1)">-</button>-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Succession de tests pour appliquer la classe css située après [class.] &ndash;&gt;-->
-<!--    <div class="col-20 compteur"-->
-<!--         [class.yellow]="compteur === 0"-->
-<!--         [class.dark-green]="compteur >= 26"-->
-<!--         [class.default-green]="compteur >= 16 && compteur <= 25"-->
-<!--         [class.light-green]="compteur >= 1 && compteur <= 15"-->
-<!--         [class.light-red]="compteur <= -1 && compteur >= -15"-->
-<!--         [class.default-red]="compteur <= -16 && compteur >= -25"-->
-<!--         [class.dark-red]="compteur <= -26"-->
-<!--    >-->
-<!--      &lt;!&ndash; Affichage d'une variable public qui existe dans le .ts &ndash;&gt;-->
-<!--      <p>{{compteur}}</p>-->
-<!--    </div>-->
-<!--    <div class="col-20">-->
-<!--      <button (click)="add(1)">+</button>-->
-<!--    </div>-->
-<!--    <div class="col-20">-->
-<!--      <button (click)="add(5)">++</button>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <button (click)="reset()">Reset</button>-->
-<!--  </div>-->
-<!--</div>-->
-
-<!--<div class="global-container light-green mt-2">-->
-<!--  <h2>Moyenne des étudiants</h2>-->
-<!--  <table class="table">-->
-<!--    <thead>-->
-<!--      <tr>-->
-<!--        <th>Nom</th>-->
-<!--        <th>Notes</th>-->
-<!--        <th>Moyenne</th>-->
-<!--      </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--      <tr *ngFor="let student of students">-->
-<!--        <td>{{ student.name }}</td>-->
-<!--        <td>{{ student.grades }}</td>-->
-<!--        <td>{{ calcAverage(student.grades) }}</td>-->
-<!--      </tr>-->
-<!--    </tbody>-->
-<!--  </table>-->
-<!--</div>-->
-
-<!--<div class="global-container mt-2">-->
-<!--  <div class="container-compteur yatzee-height">-->
-<!--      <img *ngFor="let diceOfYatzee of yatzee.myDice"-->
-<!--            [src]="diceOfYatzee.image"-->
-<!--            [alt]="diceOfYatzee.value"-->
-<!--            (click)="diceOfYatzee.isSelected = !diceOfYatzee.isSelected"-->
-<!--            [class.isActive]="diceOfYatzee.isSelected"-->
-<!--      >-->
-<!--  </div>-->
-<!--  <div class="mt-2">-->
-<!--    <button (click)="yatzee.throwDice()">Lancer dés</button>-->
-<!--    <button [hidden]="yatzee.myDice.length === 0" (click)="yatzee.rerollDice()">Relancer les dés</button>-->
-<!--  </div>-->
-<!--</div>-->
 
 

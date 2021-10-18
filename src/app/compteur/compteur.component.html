@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-20">
+    <!-- on définit l'action du clic sur le bouton => fonction add qui sera appelée -->
+    <button (click)="add(-5)">--</button>
+  </div>
+  <div class="col-20">
+    <button (click)="add(-1)">-</button>
+  </div>
+  <!-- Succession de tests pour appliquer la classe css située après [class.] -->
+  <div class="col-20 compteur"
+       [class.yellow]="compteur === 0"
+       [class.dark-green]="compteur >= 26"
+       [class.default-green]="compteur >= 16 && compteur <= 25"
+       [class.light-green]="compteur >= 1 && compteur <= 15"
+       [class.light-red]="compteur <= -1 && compteur >= -15"
+       [class.default-red]="compteur <= -16 && compteur >= -25"
+       [class.dark-red]="compteur <= -26"
+  >
+    <!-- Affichage d'une variable public qui existe dans le .ts -->
+    <p>{{compteur}}</p>
+  </div>
+  <div class="col-20">
+    <button (click)="add(1)">+</button>
+  </div>
+  <div class="col-20">
+    <button (click)="add(5)">++</button>
+  </div>
+</div>
+<div>
+  <button (click)="reset()">Reset</button>
+</div>

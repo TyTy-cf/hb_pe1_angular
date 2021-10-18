@@ -143,13 +143,18 @@ Voici une liste de département à créer :
 <hr>
 
 
-Le component devra avoir une route et un paramatre (nom : code), mais il n'aura pas de lien dans la navbar.
+Le component devra avoir une route et un paramètre (nom : code), mais il n'aura pas de lien dans la navbar.
 
 Afin d'accéder à ce component, on ajoutera un lien (routerLink) dans le tableau de region (il faudra donc modifier notre tableau), et faire un lien nommé "Les départements" qui permettra d'accéder au component 'department-index'.
 Le paramètre 'code' de la route est le code de la région, il faudra afficher dans le 'department-index', uniquement les départements dont le code de la région est passé en paramètre.
 
 
+### 7.. Breadcrumbs
 
+Dans le city-component je veux voir :
+- "Toutes les régions " => lien vers Region index
+- " -> Département de la region xx " => lien formatté vers le Departement-index avec le codeRegion xx
+- "-> villes du départment xx" 
 
 
 

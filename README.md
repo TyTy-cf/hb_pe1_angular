@@ -233,7 +233,15 @@ Vous devez afficher dans un component 'chess' le plateau du jeu d'échec avec ce
 Une fois avoir crééer le plateau de jeu... Il faut faire bouger les pièces :D
 
 
-### 10. Les héros... Le retour
+### 10. Faire un jeu de 56 cartes
+
+
+Faire une classe métier qui représente un jeu de carte, comment feriez vous ?
+
+Vous ferez le component qui permet d'afficher votre jeu de carte.
+
+
+### 11. Les héros... Le retour
 
 
 Nous allons créer une classe 'Battleground', qui prendra en paramètre 2 noms de héros à créer (de type string).
@@ -264,7 +272,9 @@ Une fois que vous vous êtes assuré que votre classe Battleground fonctionne, v
 
 L'idée est que le component battleground puisse afficher deux components 'hero-card', vous ferez le nécessaire pour que cela fonctionne.
 
-### 11. Les héros... le retour du comeback
+
+### 12. Les héros... le retour du comeback
+
 
 Créer une classe nommée : Ability (dossier heroes)
 

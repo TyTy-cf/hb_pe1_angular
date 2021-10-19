@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Code</th>
+    <th>Code région</th>
+  </tr>
+  </thead>
+  <tbody *ngIf="arrayDepartments.length > 0; else noDepartments">
+    <tr *ngFor="let department of arrayDepartments"
+        class="click-tr"
+    >
+      <td>
+        {{department.name}}
+      </td>
+      <td>
+        {{department.code}}
+      </td>
+      <td>
+        {{department.codeRegion}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noDepartments>
+  <td colspan="3">Aucun département pour la région de code {{codeRegion}}</td>
+</ng-template>

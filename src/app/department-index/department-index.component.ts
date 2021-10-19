@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Department} from "../../models/regions/department";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-department-index',
@@ -9,8 +10,9 @@ import {Department} from "../../models/regions/department";
 export class DepartmentIndexComponent implements OnInit {
 
   arrayDepartments: Array<Department> = [];
+  codeRegion!: string;
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.arrayDepartments = [
@@ -35,6 +37,10 @@ export class DepartmentIndexComponent implements OnInit {
       new Department("54", "Meurthe-et-Moselle", "44"),
       new Department("55", "Meuse", "44"),
     ];
+    this.activatedRoute.params.subscribe((param) => {
+      this.codeRegion = param.code;
+    });
+    this.arrayDepartments = this.arrayDepartments.filter((dpt) => dpt.codeRegion === this.codeRegion);
   }
 
 }

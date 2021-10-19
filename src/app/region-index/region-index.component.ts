@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Region} from "../../models/regions/region";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-region-index',
@@ -9,6 +10,8 @@ import {Region} from "../../models/regions/region";
 export class RegionIndexComponent implements OnInit {
 
   arrayRegion: Array<Region> = [];
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.arrayRegion = [
@@ -20,4 +23,11 @@ export class RegionIndexComponent implements OnInit {
     ];
   }
 
+  /**
+   * OBjet router qui permet de rediriger l'utilisateur sur une route
+   * @param code
+   */
+  routerLinkDepartment(code: string): void {
+    this.router.navigate(['regions/' + code + '/departments']);
+  }
 }

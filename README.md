@@ -90,6 +90,9 @@ Il faudra que le component 'app', le component principal :
 ### 4. Faire un component 'region-index'
 
 
+Pour cet exercice, le 5 et le 6, nous utiliserons les classes que j'ai créées dans le dossier "models/regions".
+
+
 Créer un component 'region-index'.
 
 Ce component doit :
@@ -122,7 +125,9 @@ Créer un component 'department-index'.
 
 Ce component doit :
 Afficher un tableau de Department (dans l'HTML), tous les attributs d'un Department seront affichés
-Pour cela, il faut un attribut permettant de stocker plusieurs Department dans la partie typescript
+
+Pour cela, il faut un attribut permettant de stocker plusieurs Department dans la partie typescript.
+
 Et une fois fait, il faut créer plusieurs objets de type Department et les ajouter dans cet attribut.
 
 Voici une liste de département à créer :
@@ -149,12 +154,119 @@ Afin d'accéder à ce component, on ajoutera un lien (routerLink) dans le tablea
 Le paramètre 'code' de la route est le code de la région, il faudra afficher dans le 'department-index', uniquement les départements dont le code de la région est passé en paramètre.
 
 
-### 7.. Breadcrumbs
+### 6. Créer des services
 
-Dans le city-component je veux voir :
+
+Dorénavant, nous avons vu les bonnes pratiques pour la gestion de nos objets dans les différents components, nous allons crééer des 'services' permettant de stocker nos objets : Region, Department et City.
+
+Comment vont fonctionner ces services ?
+
+
+Ils vont avoir respectivement un tableau de l'objet qu'ils doivent stocker, 'region-service.ts' aura un tableau de Region, avec un getter.
+
+Ce tableau sera le même que nous utilisions avant dans le component 'region-index', du coup vous pourrez l'enlever du 'region-index', ainsi vous utiliserez le 'region-service' dans le component 'region-index' et nous pourrons directement appeler le tableau depuis le service.
+
+
+Il faut faire la même chose pour Department et City.
+
+Pour les City, voilà quelques city à créer :
+
+- "nom": "Aigueperse",
+- "code": "63001",
+- "codeDepartment": "63"
+- "codesPostaux": ["63260"]
+- "population": 2720
+
+<hr>
+
+- "nom": "Clermont-Ferrand",
+- "code": "63113",
+- "codeDepartement": "63",
+- "codesPostaux": [
+  "63100",
+  "63000"
+],
+- "population": 142686
+<hr>
+
+- "nom": "Saint-Étienne",
+- "code": "42218",
+- "codeDepartement": "42",
+"codesPostaux": [
+  "42000",
+  "42100",
+  "42230"
+],
+- "population": 171924
+<hr>
+
+Si vous souhaitez en créer d'autres, voilà une URL : https://geo.api.gouv.fr/departements/63/communes
+
+
+### 7. Création d'un component 'city-index'
+
+
+Ce component doit :
+Afficher un tableau de City (dans l'HTML), tous les attributs d'une City seront affichés.
+
+Pour cela, il aura le 'city-service' récemment créé, et devra utiliser son tableau comme source pour afficher les city.
+
+
+Le component devra avoir une route et un paramètre (nom : codeDepartment), mais il n'aura pas de lien dans la navbar.
+
+Afin d'accéder à ce component, on ajoutera un lien (routerLink) dans le tableau de départment (il faudra donc modifier notre tableau) qui permettra d'accéder au component 'city-index'.
+Le paramètre 'codeDepartment' de la route est le code du département, il faudra afficher dans le 'city-index', uniquement les city dont le code de département est passé en paramètre.
+
+
+### 9. Exercice @Input
+
+
+Créer un component 'all-multiplication-tables', il doit afficher toutes les tables de multiplication (**avec un joli CSS !**) de 1 à 9.
+
+Chaque table de multiplication correspondra au component 'mult-table' créé hier, il faudra modifier ce component pour qu'il inclue non plus le chiffre de la table par paramètre de route, mais par la décoration @Input.
+
+
+### 8. Breadcrumbs
+
+
+Dans le city-component je veux voir un enchanement de liens :
 - "Toutes les régions " => lien vers Region index
 - " -> Département de la region xx " => lien formatté vers le Departement-index avec le codeRegion xx
-- "-> villes du départment xx" 
+- "-> villes du départment xx"
+
+
+### 10. Les héros... Le retour
+
+
+Nous allons créer une classe 'Battleground', qui prendra en paramètre 2 noms de héros à créer (de type string).
+
+Le constructeur de cette classe devra créer 2 héros **aléatoire** à partir des deux noms, et les sauvegarder dans des attributs de type 'Hero' et de nom 'heroOne' et 'heroTwo'.
+
+La classe 'battleground' aura une méthode 'fight' avec ce code :
+
+````
+const heroes: Array<Hero> = [this.heroOne, this.heroTwo];
+while (this.heroOne.isAlive() && this.heroTwo.isAlive()) {
+  const index = getRandomBetween(0, 1);
+  const first: Hero = heroes[index];
+  const second: Hero = heroes[Math.abs(index - 1)];
+  console.log('Le premier hero à attaquer est ' + first.name);
+  first.attack(second);
+  if (second.isAlive()) {
+    second.attack(first);
+  }
+}
+````
+
+Afin de tester notre classe 'Battleground', nous allons créer un component 'battleground', qui aura un attribut de type 'Battleground' (la classe créée plus tôt).
+
+Vous l'instancierez et lui donnerez 2 noms de votre convenance.
+
+Une fois que vous vous êtes assuré que votre classe Battleground fonctionne, vous ferez un component : 'hero-card', ce component doit se contenter d'afficher un héro, une jolie card avec les images fournies dans le dossier 'assets/heroes' (trouvez une solution pour intégrer l'image du héro... ;) )
+
+L'idée est que le component battleground puisse afficher deux components 'hero-card', vous ferez le nécessaire pour que cela fonctionne.
+
+
 
 
 

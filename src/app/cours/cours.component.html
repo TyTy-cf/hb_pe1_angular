@@ -38,24 +38,7 @@
   </table>
 </div>
 
-<div class="global-container light-green mt-2">
-  <h2>Moyenne des étudiants</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Notes</th>
-        <th>Moyenne</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let student of students">
-        <td>{{ student.name }}</td>
-        <td>{{ student.grades }}</td>
-        <td>{{ calcAverage(student.grades) }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<app-student [average]="dice.value"></app-student>
+
 
 

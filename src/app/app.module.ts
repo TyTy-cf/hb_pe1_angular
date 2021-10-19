@@ -10,6 +10,8 @@ import { YahtzeeComponent } from './yahtzee/yahtzee.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegionIndexComponent } from './region-index/region-index.component';
 import { DepartmentIndexComponent } from './department-index/department-index.component';
+import { StudentComponent } from './student/student.component';
+import { CityIndexComponent } from './city-index/city-index.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DepartmentIndexComponent } from './department-index/department-index.co
     YahtzeeComponent,
     NavbarComponent,
     RegionIndexComponent,
-    DepartmentIndexComponent
+    DepartmentIndexComponent,
+    StudentComponent,
+    CityIndexComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,39 @@
+
+<!-- Le "?" effectue un test sur l'existence de l'attribut "region", s'il existe on affiche son name -->
+<h2 *ngIf="region">Départements de la région {{region?.name}}</h2>
+<!--<div class="">-->
+<!--  <a routerLink="/regions">Toutes les régions</a>-->
+<!--  ->-->
+<!--  <span *ngIf="region">Départements de la région {{region?.name}}</span>-->
+<!--  ->-->
+<!--  <span *ngIf="region">Villes du département Puy de Dome</span>-->
+<!--</div>-->
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Code</th>
+    <th>Code région</th>
+  </tr>
+  </thead>
+  <tbody *ngIf="arrayDepartments.length > 0; else noDepartments">
+    <tr *ngFor="let department of arrayDepartments"
+        (click)="routerLinkCity(department.codeRegion, department.code)"
+        class="click-tr"
+    >
+      <td>
+        {{department.name}}
+      </td>
+      <td>
+        {{department.code}}
+      </td>
+      <td>
+        {{department.codeRegion}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noDepartments>
+  <td colspan="3">Aucun département pour la région</td>
+</ng-template>

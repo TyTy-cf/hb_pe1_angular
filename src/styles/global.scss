@@ -72,3 +72,11 @@ p {
   height: 90px;
 }
 
+.click-tr {
+  cursor: crosshair;
+
+  &:hover {
+    background-color: $main-yellow;
+  }
+}
+

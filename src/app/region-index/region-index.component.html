@@ -6,7 +6,10 @@
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let region of arrayRegion">
+  <tr *ngFor="let region of regionService.arrayRegion"
+      (click)="routerLinkDepartment(region.code)"
+      class="click-tr"
+  >
     <td>
       {{region.name}}
     </td>

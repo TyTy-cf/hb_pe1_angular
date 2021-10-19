@@ -264,7 +264,68 @@ Une fois que vous vous êtes assuré que votre classe Battleground fonctionne, v
 
 L'idée est que le component battleground puisse afficher deux components 'hero-card', vous ferez le nécessaire pour que cela fonctionne.
 
+### 11. Les héros... le retour du comeback
 
+Créer une classe nommée : Ability (dossier heroes)
+
+Une Ability est composé de :
+- name (string)
+- manaCost (number)
+- damage (number)
+- criticalStrike (number)
+- cooldown (number)
+- currentCooldown (number)
+
+Un héro aura dorénavant du mana (number), avec un attribut manaMax (number)
+
+Un mage aura :
+- 360 mana lelvel 1
+
+Un Warrior aura : 
+- 190 mana level 1
+
+Un Rogue aura :
+- 190 mana level 1
+
+Lorsqu'un héro levelup :
+
+Un Mage gagne : 
+- 32 mana
+
+Un Warrior gagne :
+- 24 mana
+
+Un Rogue gagne :
+- 23 mana
+
+Au niveau des capacités...
+
+Un héro aura plusieurs ability
+
+Par défaut, un Mage a la capacité :
+- name (string) : Fireball
+- manaCost (number) : 160 mana
+- damage (number) : 120% des dégâts de base (arrondi entre le min et max)
+- criticalStrike (number) : la même que le héro
+- cooldown : 3
+
+Par défaut, un Warrior a la capacité :
+- name (string) : Mortal strike
+- manaCost (number) : 100 mana
+- damage (number) : 100% des dégâts de base (arrondi entre le min et max) + 30
+- criticalStrike (number) : la même que le héro
+- cooldown : 2
+
+Par défaut, un Rogue a la capacité :
+- name (string) : Shadowstrike
+- manaCost (number) : 110 mana
+- damage (number) : 100% des dégâts de base (arrondi entre le min et max) + 20
+- criticalStrike (number) : 100%
+- cooldown : 4
+
+
+Lorsqu'un héro utilise sa capacité, on lui retire son coût en mana.
+Une capacité utilisé devient "en cooldown", "currentCooldown devient à 0", à chaque action, il augmente de 1
 
 
 

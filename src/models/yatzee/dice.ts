@@ -5,8 +5,8 @@ export class Dice {
   private readonly _image: string;
   private _isSelected: boolean;
 
-  constructor() {
-    this._value = Math.floor(Math.random() * 6) + 1;
+  constructor(faces: number = 6) {
+    this._value = Math.floor(Math.random() * faces) + 1;
     this._image = 'assets/yatzee/' + this._value + '.png';
     this._isSelected = false;
   }

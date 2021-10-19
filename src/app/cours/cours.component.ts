@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {Dice} from "../../models/yatzee/dice";
 import {ScrabbleCount} from "../../models/interface/scrabble_count";
-import {Student} from "../../models/interface/student";
 
 @Component({
   selector: 'app-cours-bases',
@@ -11,8 +10,7 @@ import {Student} from "../../models/interface/student";
 export class CoursComponent {
 
   title = 'App Cours Component';
-  dice: Dice = new Dice();
-  headerColor: string = '#fc03a5';
+  dice: Dice = new Dice(20);
 
   constructor() {
     console.log('Dans le constructor');
@@ -33,7 +31,7 @@ export class CoursComponent {
   }
 
   rerollDice(): void {
-    this.dice = new Dice();
+    this.dice = new Dice(20);
   }
 
   labelButton: string = 'Afficher Scores Scrabble';
@@ -50,24 +48,6 @@ export class CoursComponent {
 
   getPointUnits(point: number): string {
     return point + 'pts';
-  }
-
-  /***********************************************/
-  /**************** Exo - Compteur ***************/
-  /***********************************************/
-
-  students: Array<Student> = [
-    { name: 'Albert', grades: [12, 8, 9, 7, 13] },
-    { name: 'Vincent', grades: [14, 13, 12, 11, 10] },
-    { name: 'Michel', grades: [17, 16, 15, 18, 13] },
-  ];
-
-  calcAverage(arrayGrades: Array<number>): number {
-    let sum: number = 0;
-    for (const grade of arrayGrades) {
-      sum += grade;
-    }
-    return sum / arrayGrades.length;
   }
 
 }

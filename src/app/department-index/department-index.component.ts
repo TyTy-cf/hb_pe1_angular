@@ -31,8 +31,8 @@ export class DepartmentIndexComponent implements OnInit {
     this.arrayDepartments = this.departmentService.findByCodeRegion(this.codeRegion);
   }
 
-  routerLinkCity(code: string): void {
+  routerLinkCity(codeReg: string, codeDpt: string): void {
     // adapter le lien pour l'url des villes
-    this.router.navigate(['regions/' + code + '/departments']);
+    this.router.navigate(['regions/'+codeReg+'/departments/'+codeDpt+'/cities']);
   }
 }

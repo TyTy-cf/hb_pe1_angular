@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Department} from "../models/regions/department";
+import {Region} from "../models/regions/region";
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +36,13 @@ export class DepartmentService {
 
   findByCodeRegion(codeRegion: string): Array<Department> {
     return this._arrayDepartments.filter((dpt) => dpt.codeRegion === codeRegion);
+  }
+
+  findByCode(code: string): Department|undefined {
+    const tmpArray = this._arrayDepartments.filter((dpt) => dpt.code === code);
+    if (tmpArray.length > 0) {
+      return tmpArray[0];
+    }
+    return undefined;
   }
 }

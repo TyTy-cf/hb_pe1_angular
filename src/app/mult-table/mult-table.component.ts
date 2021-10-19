@@ -10,6 +10,12 @@ export class MultTableComponent implements OnInit {
 
   attrDigit!: number;
 
+  /**
+   * Injection de dépendance : c'est Angular qui nous créer l'objet !
+   * @param attrActivatedRoute, avec le mot-clé de visiblité "private" dans le constructeur
+   * Cela signifie que nous allons créer un attribut à notre classe de même nom (attrActivatedRoute)
+   * et nous allons le set directement
+   */
   constructor(private attrActivatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {

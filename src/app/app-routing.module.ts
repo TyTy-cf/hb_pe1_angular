@@ -7,6 +7,9 @@ import {YahtzeeComponent} from "./yahtzee/yahtzee.component";
 import {RegionIndexComponent} from "./region-index/region-index.component";
 import {DepartmentIndexComponent} from "./department-index/department-index.component";
 
+// Les routes de l'application
+// On a un chemin (path) qui est le nom affiché dans l'URL du navigateur
+// Et un component qui est lié à ce path, et qui est l'affichage HTML de la page
 const routes: Routes = [
   // Si le path est vide, c'est le component qui sera affiché par défaut
   { path: '', component: CoursComponent },

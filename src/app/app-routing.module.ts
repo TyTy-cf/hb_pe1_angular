@@ -6,6 +6,7 @@ import {CompteurComponent} from "./compteur/compteur.component";
 import {YahtzeeComponent} from "./yahtzee/yahtzee.component";
 import {RegionIndexComponent} from "./region-index/region-index.component";
 import {DepartmentIndexComponent} from "./department-index/department-index.component";
+import {CityIndexComponent} from "./city-index/city-index.component";
 
 // Les routes de l'application
 // On a un chemin (path) qui est le nom affiché dans l'URL du navigateur
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'yahtzee', component: YahtzeeComponent },
   { path: 'regions', component: RegionIndexComponent },
   { path: 'regions/:code/departments', component: DepartmentIndexComponent },
+  { path: 'regions/:codeReg/departments/:codeDpt/cities', component: CityIndexComponent },
 ];
 
 @NgModule({

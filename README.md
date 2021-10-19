@@ -36,18 +36,6 @@ Je vais modifier la classe Dice pour qu'elle introduise des images des valeurs d
 Vous devrez afficher les images des dés dans l'HTML.
 
 
-### 4. Le jeu d'échec
-
-
-Nous inclurons dans un premier temps les images des pièces du jeu d'échec.
-Pour cela il faudra ajouter un attribut dans la classe "Piece" de nom "image" et de type string.
-(Inspirez vous des dés du Yatzee)
-
-Les images seront initialisés par défaut, dans leur classe respective.
-
-Vous afficherez ensuite le plateau du jeu d'échec en HTML avec ses cases et les images de ses pièces.
-
-
 # Exercices Component Angular
 
 
@@ -233,6 +221,16 @@ Dans le city-component je veux voir un enchanement de liens :
 - "Toutes les régions " => lien vers Region index
 - " -> Département de la region xx " => lien formatté vers le Departement-index avec le codeRegion xx
 - "-> villes du départment xx"
+
+
+### 9. Le jeu d'échec
+
+
+Les classes du jeu d'échec ont été modifiées pour inclure les images.
+
+Vous devez afficher dans un component 'chess' le plateau du jeu d'échec avec ces pièces.
+
+Une fois avoir crééer le plateau de jeu... Il faut faire bouger les pièces :D
 
 
 ### 10. Les héros... Le retour

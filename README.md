@@ -246,6 +246,9 @@ Ce component doit inclure le UserService et afficher les users du tableau dans l
 
 L'html doit aussi inclure un lien vers le "form-user", fait en cours (faire la route du coup).
 Vous ajouterez un comportement dans le "form-user", dans le "onSubmit" on va ajouter le user créé dans le "UserService" via la méthode addUser que vous avez fait précédemment.
+Dans le "form-user", on le complètera pour inclure les attributs manquants.
+MAIS seul le nickname et l'email sont obligatoire, les autres sont facultatifs.
+(Si fait via l'éventuel @Input : alors on passe un user vide, un simple new User)
 
 Vous ferez un component "user-account". Il doit afficher toutes les informations complémentaires de l'utilisateur.
 Ce component aura donc un attribut User.
@@ -253,7 +256,8 @@ Ce component aura donc un attribut User.
 Dans le component "user-index" vous ajouterez un lien sur chaque user pour aller vers le "user-account", on passera en paramètre de la route l'email du user.
 Il faudra récupérer l'email du User par la route et récupérer ensuite le User complet dans le Service.
 
-Dans l'html du component "user-account", vous ajouterez un bouton "Modifier" qui permet d'afficher un formulaire COMPLET pour l'utilisateur.
+Dans l'html du component "user-account", vous ajouterez un bouton "Modifier" qui permet d'afficher le "form-user".
+(Il faudra peut-être, éventuellement voir fortement utiliser un @Input pour faire passer le user au formulaire...)
 Ainsi, le component "user-account" permet d'afficher le User ou de le modifier au besoin, le tout sur la même page !
 
 

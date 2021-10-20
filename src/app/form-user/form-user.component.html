@@ -3,45 +3,54 @@
 
   <!-- [class.is-invalid]="inputUserName.touched && inputUserName.invalid" -->
   <!-- On applique la classe is-invalid si le champ a été cliqué au moins une fois et qu'il est toujours invalide -->
-  <input  [(ngModel)]="user.nickname"
-          [name]="'nickname'"
-          #inputUserNickname="ngModel"
-          [class.is-invalid]="inputUserNickname.touched && inputUserNickname.invalid"
-          type="text"
-          class="form-control"
-          placeholder="Pseudo"
-          required
-          minlength="{{minLength}}"
-  >
-  <div *ngIf="inputUserNickname.invalid && (inputUserNickname.dirty || inputUserNickname.touched)"
-    class="alert-danger"
-  >
-    <div *ngIf="inputUserNickname.errors?.required">
-      Le nickname est requis
+  <div class="input-group">
+    <div class="col-6">
+      <input  [(ngModel)]="user.nickname"
+              [name]="'nickname'"
+              #inputUserNickname="ngModel"
+              [class.is-invalid]="inputUserNickname.touched && inputUserNickname.invalid"
+              type="text"
+              class="form-control"
+              placeholder="Pseudo"
+              required
+              minlength="{{minLength}}"
+      >
     </div>
-    <div *ngIf="inputUserNickname.errors?.minlength">
-      Le nickname doit faire au moins {{minLength}} caractères
+    <div *ngIf="inputUserNickname.invalid && (inputUserNickname.dirty || inputUserNickname.touched)"
+      class="p-2 ms-2 col-5 alert-danger"
+    >
+      <div *ngIf="inputUserNickname.errors?.required">
+        Le nickname est requis
+      </div>
+      <div *ngIf="inputUserNickname.errors?.minlength">
+        Le nickname doit faire au moins {{minLength}} caractères
+      </div>
     </div>
   </div>
 
-  <input  [(ngModel)]="user.email"
-          [name]="'email'"
-          #inputUserEmail="ngModel"
-          [class.is-invalid]="inputUserEmail.touched && inputUserEmail.invalid"
-          type="text"
-          class="form-control"
-          placeholder="Email"
-          required
-          pattern=".+@[\w\W]*"
-  >
-  <div *ngIf="inputUserEmail.invalid && (inputUserEmail.dirty || inputUserEmail.touched)"
-       class="alert-danger"
-  >
-    <div *ngIf="inputUserEmail.errors?.required">
-      L'email est requis
+  <div class="input-group">
+    <div class="col-6">
+      <input  [(ngModel)]="user.email"
+              [name]="'email'"
+              #inputUserEmail="ngModel"
+              [class.is-invalid]="inputUserEmail.touched && inputUserEmail.invalid"
+              type="text"
+              class="form-control"
+              placeholder="Email"
+              required
+              pattern=".+@[\w\W]*"
+      >
+
     </div>
-    <div *ngIf="inputUserEmail.errors?.pattern">
-      Ce n'est pas un email valide
+    <div *ngIf="inputUserEmail.invalid && (inputUserEmail.dirty || inputUserEmail.touched)"
+         class="p-2 ms-2 col-5 alert-danger"
+    >
+      <div *ngIf="inputUserEmail.errors?.required">
+        L'email est requis
+      </div>
+      <div *ngIf="inputUserEmail.errors?.pattern">
+        Ce n'est pas un email valide
+      </div>
     </div>
   </div>
 

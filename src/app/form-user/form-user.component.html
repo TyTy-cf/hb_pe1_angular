@@ -1,0 +1,57 @@
+
+<form (ngSubmit)="onSubmit()" #formUser="ngForm">
+
+  <!-- [class.is-invalid]="inputUserName.touched && inputUserName.invalid" -->
+  <!-- On applique la classe is-invalid si le champ a été cliqué au moins une fois et qu'il est toujours invalide -->
+  <input  [(ngModel)]="user.nickname"
+          [name]="'nickname'"
+          #inputUserNickname="ngModel"
+          [class.is-invalid]="inputUserNickname.touched && inputUserNickname.invalid"
+          type="text"
+          class="form-control"
+          placeholder="Pseudo"
+          required
+          minlength="{{minLength}}"
+  >
+  <div *ngIf="inputUserNickname.invalid && (inputUserNickname.dirty || inputUserNickname.touched)"
+    class="alert-danger"
+  >
+    <div *ngIf="inputUserNickname.errors?.required">
+      Le nickname est requis
+    </div>
+    <div *ngIf="inputUserNickname.errors?.minlength">
+      Le nickname doit faire au moins {{minLength}} caractères
+    </div>
+  </div>
+
+  <input  [(ngModel)]="user.email"
+          [name]="'email'"
+          #inputUserEmail="ngModel"
+          [class.is-invalid]="inputUserEmail.touched && inputUserEmail.invalid"
+          type="text"
+          class="form-control"
+          placeholder="Email"
+          required
+          pattern=".+@[\w\W]*"
+  >
+  <div *ngIf="inputUserEmail.invalid && (inputUserEmail.dirty || inputUserEmail.touched)"
+       class="alert-danger"
+  >
+    <div *ngIf="inputUserEmail.errors?.required">
+      L'email est requis
+    </div>
+    <div *ngIf="inputUserEmail.errors?.pattern">
+      Ce n'est pas un email valide
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit" [disabled]="formUser.invalid">
+    Créer User
+  </button>
+</form>
+
+<h2>User :</h2>
+<ul>
+  <li>{{user.nickname}}</li>
+  <li>{{user.email}}</li>
+</ul>

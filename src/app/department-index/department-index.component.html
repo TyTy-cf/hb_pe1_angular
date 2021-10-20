@@ -1,13 +1,20 @@
 
-<!-- Le "?" effectue un test sur l'existence de l'attribut "region", s'il existe on affiche son name -->
-<h2 *ngIf="region; else emptyRegion">Départements de la région {{region?.name}}</h2>
-<!--<div class="">-->
-<!--  <a routerLink="/regions">Toutes les régions</a>-->
-<!--  ->-->
-<!--  <span *ngIf="region">Départements de la région {{region?.name}}</span>-->
-<!--  ->-->
-<!--  <span *ngIf="region">Villes du département Puy de Dome</span>-->
-<!--</div>-->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a routerLink="/regions">
+        Régions
+      </a>
+    </li>
+    <li class="breadcrumb-item active"
+        aria-current="page"
+        [hidden]="!region"
+    >
+      Départements - {{region?.name}}
+    </li>
+  </ol>
+</nav>
+
 <table class="table table-striped">
   <thead>
   <tr>

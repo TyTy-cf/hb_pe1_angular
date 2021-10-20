@@ -12,6 +12,9 @@ import { RegionIndexComponent } from './region-index/region-index.component';
 import { DepartmentIndexComponent } from './department-index/department-index.component';
 import { StudentComponent } from './student/student.component';
 import { CityIndexComponent } from './city-index/city-index.component';
+import { FormUserComponent } from './form-user/form-user.component';
+import {FormsModule} from "@angular/forms";
+import { AllMultiplicationTablesComponent } from './all-multiplication-tables/all-multiplication-tables.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +28,13 @@ import { CityIndexComponent } from './city-index/city-index.component';
     DepartmentIndexComponent,
     StudentComponent,
     CityIndexComponent,
+    FormUserComponent,
+    AllMultiplicationTablesComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

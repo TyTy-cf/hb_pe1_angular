@@ -1,3 +1,22 @@
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a routerLink="/regions">
+        Régions
+      </a>
+    </li>
+    <li class="breadcrumb-item" [hidden]="!region">
+      <a routerLink="/regions/{{region?.code}}/departments">
+        Départements - {{region?.name}}
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page" [hidden]="!department">
+      Villes - {{department?.name}}
+    </li>
+  </ol>
+</nav>
+
 <table  *ngIf="department; else noDepartment"
         class="table table-striped">
   <thead>

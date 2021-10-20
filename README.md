@@ -223,7 +223,41 @@ Dans le city-component je veux voir un enchanement de liens :
 - "-> villes du départment xx"
 
 
-### 9. Le jeu d'échec
+### 9. Travail des formulaires
+
+
+Nous allons améliorer la classe User.
+
+Pour cela on va ajouter les attributs suivants dans la classe User :
+- lastname (string) : le nom du user
+- firstname (string) : le prénom du user
+- address (string) : adresse du user
+- postalCode (string) : code postal de la ville du user
+- city (string) : ville du user
+
+
+Vous devez faire un service de nom "user".
+Il doit stocker un tableau de User (comme pour les régions, départements et city), vous devrez créer quelques user afin de tester vos données.
+Vous ajouterez une méthode "addUser" qui prend en paramètre un User et l'ajoute au tableau de User.
+Vous ajouterez une méthode "findByEmail" qui prend en paramètre un string (email) et permet de récupérer un User qui possède la même e-mail.
+
+Vous ferez un component "user-index".
+Ce component doit inclure le UserService et afficher les users du tableau dans l'html.
+
+L'html doit aussi inclure un lien vers le "form-user", fait en cours (faire la route du coup).
+Vous ajouterez un comportement dans le "form-user", dans le "onSubmit" on va ajouter le user créé dans le "UserService" via la méthode addUser que vous avez fait précédemment.
+
+Vous ferez un component "user-account". Il doit afficher toutes les informations complémentaires de l'utilisateur.
+Ce component aura donc un attribut User.
+
+Dans le component "user-index" vous ajouterez un lien sur chaque user pour aller vers le "user-account", on passera en paramètre de la route l'email du user.
+Il faudra récupérer l'email du User par la route et récupérer ensuite le User complet dans le Service.
+
+Dans l'html du component "user-account", vous ajouterez un bouton "Modifier" qui permet d'afficher un formulaire COMPLET pour l'utilisateur.
+Ainsi, le component "user-account" permet d'afficher le User ou de le modifier au besoin, le tout sur la même page !
+
+
+### 10. Le jeu d'échec
 
 
 Les classes du jeu d'échec ont été modifiées pour inclure les images.
@@ -233,7 +267,7 @@ Vous devez afficher dans un component 'chess' le plateau du jeu d'échec avec ce
 Une fois avoir crééer le plateau de jeu... Il faut faire bouger les pièces :D
 
 
-### 10. Faire un jeu de 56 cartes
+### 11. Faire un jeu de 56 cartes
 
 
 Faire une classe métier qui représente un jeu de carte, comment feriez vous ?
@@ -241,7 +275,7 @@ Faire une classe métier qui représente un jeu de carte, comment feriez vous ?
 Vous ferez le component qui permet d'afficher votre jeu de carte.
 
 
-### 11. Les héros... Le retour
+### 12. Les héros... Le retour
 
 
 Nous allons créer une classe 'Battleground', qui prendra en paramètre 2 noms de héros à créer (de type string).
@@ -273,7 +307,7 @@ Une fois que vous vous êtes assuré que votre classe Battleground fonctionne, v
 L'idée est que le component battleground puisse afficher deux components 'hero-card', vous ferez le nécessaire pour que cela fonctionne.
 
 
-### 12. Les héros... le retour du comeback
+### 13. Les héros... le retour du comeback
 
 
 Créer une classe nommée : Ability (dossier heroes)

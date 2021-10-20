@@ -1,1 +1,43 @@
-<p>city-index works!</p>
+<table  *ngIf="department; else noDepartment"
+        class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Code</th>
+      <th>Département</th>
+      <th>Code postaux</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="arrayCity.length > 0; else noCities">
+    <tr *ngFor="let city of arrayCity"
+        class="click-tr"
+    >
+      <td>
+        {{city.name}}
+      </td>
+      <td>
+        {{city.code}}
+      </td>
+      <td>
+        {{department?.name}}
+      </td>
+      <td>
+        <span *ngFor="let postalCode of city.postalCode">
+          {{postalCode}}
+        </span>
+      </td>
+      <td>
+        {{city.population}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noDepartment>
+  <p>Ce code de département n'existe pas</p>
+</ng-template>
+
+<ng-template #noCities>
+  <td colspan="5">Aucune ville n'a été trouvé pour ce département</td>
+</ng-template>

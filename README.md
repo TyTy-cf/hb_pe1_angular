@@ -36,18 +36,6 @@ Je vais modifier la classe Dice pour qu'elle introduise des images des valeurs d
 Vous devrez afficher les images des dés dans l'HTML.
 
 
-### 4. Le jeu d'échec
-
-
-Nous inclurons dans un premier temps les images des pièces du jeu d'échec.
-Pour cela il faudra ajouter un attribut dans la classe "Piece" de nom "image" et de type string.
-(Inspirez vous des dés du Yatzee)
-
-Les images seront initialisés par défaut, dans leur classe respective.
-
-Vous afficherez ensuite le plateau du jeu d'échec en HTML avec ses cases et les images de ses pièces.
-
-
 # Exercices Component Angular
 
 
@@ -235,7 +223,25 @@ Dans le city-component je veux voir un enchanement de liens :
 - "-> villes du départment xx"
 
 
-### 10. Les héros... Le retour
+### 9. Le jeu d'échec
+
+
+Les classes du jeu d'échec ont été modifiées pour inclure les images.
+
+Vous devez afficher dans un component 'chess' le plateau du jeu d'échec avec ces pièces.
+
+Une fois avoir crééer le plateau de jeu... Il faut faire bouger les pièces :D
+
+
+### 10. Faire un jeu de 56 cartes
+
+
+Faire une classe métier qui représente un jeu de carte, comment feriez vous ?
+
+Vous ferez le component qui permet d'afficher votre jeu de carte.
+
+
+### 11. Les héros... Le retour
 
 
 Nous allons créer une classe 'Battleground', qui prendra en paramètre 2 noms de héros à créer (de type string).
@@ -266,7 +272,9 @@ Une fois que vous vous êtes assuré que votre classe Battleground fonctionne, v
 
 L'idée est que le component battleground puisse afficher deux components 'hero-card', vous ferez le nécessaire pour que cela fonctionne.
 
-### 11. Les héros... le retour du comeback
+
+### 12. Les héros... le retour du comeback
+
 
 Créer une classe nommée : Ability (dossier heroes)
 

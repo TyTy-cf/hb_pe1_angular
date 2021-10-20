@@ -1,6 +1,6 @@
 
 <!-- Le "?" effectue un test sur l'existence de l'attribut "region", s'il existe on affiche son name -->
-<h2 *ngIf="region">Départements de la région {{region?.name}}</h2>
+<h2 *ngIf="region; else emptyRegion">Départements de la région {{region?.name}}</h2>
 <!--<div class="">-->
 <!--  <a routerLink="/regions">Toutes les régions</a>-->
 <!--  ->-->
@@ -37,3 +37,9 @@
 <ng-template #noDepartments>
   <td colspan="3">Aucun département pour la région</td>
 </ng-template>
+
+<ng-template #emptyRegion>
+  <h2>Région inconnue</h2>
+</ng-template>
+
+

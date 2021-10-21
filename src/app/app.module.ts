@@ -16,6 +16,7 @@ import { FormUserComponent } from './form-user/form-user.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AllMultiplicationTablesComponent } from './all-multiplication-tables/all-multiplication-tables.component';
 import { FormUserCodeComponent } from './form-user-code/form-user-code.component';
+import { UserIndexComponent } from './user-index/user-index.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FormUserCodeComponent } from './form-user-code/form-user-code.component
     FormUserComponent,
     AllMultiplicationTablesComponent,
     FormUserCodeComponent,
+    UserIndexComponent,
   ],
   imports: [
     BrowserModule,

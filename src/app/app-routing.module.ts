@@ -10,6 +10,7 @@ import {CityIndexComponent} from "./city-index/city-index.component";
 import {FormUserComponent} from "./form-user/form-user.component";
 import {AllMultiplicationTablesComponent} from "./all-multiplication-tables/all-multiplication-tables.component";
 import {FormUserCodeComponent} from "./form-user-code/form-user-code.component";
+import {UserIndexComponent} from "./user-index/user-index.component";
 
 // Les routes de l'application
 // On a un chemin (path) qui est le nom affiché dans l'URL du navigateur
@@ -24,8 +25,9 @@ const routes: Routes = [
   { path: 'regions', component: RegionIndexComponent },
   { path: 'regions/:code/departments', component: DepartmentIndexComponent },
   { path: 'regions/:codeReg/departments/:codeDpt/cities', component: CityIndexComponent },
-  { path: 'form-user', component: FormUserComponent },
-  { path: 'form-user-code', component: FormUserCodeComponent },
+  { path: 'create-user', component: FormUserComponent },
+  { path: 'create-user-code', component: FormUserCodeComponent },
+  { path: 'users', component: UserIndexComponent },
 ];
 
 @NgModule({

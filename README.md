@@ -242,7 +242,7 @@ Vous ajouterez une méthode "addUser" qui prend en paramètre un User et l'ajout
 Vous ajouterez une méthode "findByEmail" qui prend en paramètre un string (email) et permet de récupérer un User qui possède la même e-mail.
 
 Vous ferez un component "user-index".
-Ce component doit inclure le UserService et afficher les users du tableau dans l'html.
+Ce component doit inclure le UserService et afficher les users du tableau dans l'html, vous ajouterez un lien vers le component "user-index"
 
 L'html doit aussi inclure un lien vers le "form-user", fait en cours (faire la route du coup).
 Vous ajouterez un comportement dans le "form-user", dans le "onSubmit" on va ajouter le user créé dans le "UserService" via la méthode addUser que vous avez fait précédemment.
@@ -376,6 +376,11 @@ Lorsqu'un héro utilise sa capacité, on lui retire son coût en mana.
 Une capacité utilisé devient "en cooldown", "currentCooldown devient à 0", à chaque action, il augmente de 1
 
 
+### 14. Formulaire des héros !
+
+Je veux un formulaire capable de créer un Héros.
+
+L'utilisateur doit pouvoir saisir son pseudo et choisir sa classe.
 
 
 

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {User} from "../../models/user/user";
+import {UserService} from "../../service/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-form-user',
@@ -9,12 +11,14 @@ import {User} from "../../models/user/user";
 export class FormUserComponent {
 
   user: User = new User();
-
   minLength: number = 3;
 
+  constructor(private userService: UserService, private router: Router) {
+  }
+
   onSubmit(): void {
-    console.log('Soumission du formulaire !');
-    console.log(this.user);
+    this.userService.addUser(this.user);
+    this.router.navigate(['/users']);
   }
 
 }

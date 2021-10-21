@@ -1,0 +1,30 @@
+
+<div class="float-end">
+  <a class="btn btn-primary" routerLink="/create-user-code">Créer un utilisateur (code)</a>
+  <a class="btn btn-primary" routerLink="/create-user">Créer un utilisateur</a>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nickname</th>
+      <th>Email</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Address</th>
+      <th>Postal Code</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userService.arrayUser">
+      <td>{{user.nickname}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.address}}</td>
+      <td>{{user.postalCode}}</td>
+      <td>{{user.city}}</td>
+    </tr>
+  </tbody>
+</table>

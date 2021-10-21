@@ -43,18 +43,66 @@
     </div>
   </div>
 
+  <div class="input-group">
+    <div class="col-6">
+      <input  [formControlName]="'_lastName'"
+              name="lastName"
+              type="text"
+              class="form-control"
+              placeholder="Last Name"
+      >
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div class="col-6">
+      <input  [formControlName]="'_firstName'"
+              name="firstName"
+              type="text"
+              class="form-control"
+              placeholder="First Name"
+      >
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div class="col-6">
+      <input  [formControlName]="'_address'"
+              name="address"
+              type="text"
+              class="form-control"
+              placeholder="Address"
+      >
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div class="col-6">
+      <input  [formControlName]="'_postalCode'"
+              name="postalCode"
+              type="text"
+              class="form-control"
+              placeholder="Postal Code"
+      >
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div class="col-6">
+      <input  [formControlName]="'_city'"
+              name="city"
+              type="text"
+              class="form-control"
+              placeholder="City"
+      >
+    </div>
+  </div>
+
   <div [hidden]="!existingEmail" class="p-2 ms-2 alert-danger">
     L'email existe déjà
   </div>
 
-  <button class="btn btn-primary" [disabled]="userFormGroup.invalid" (click)="onSubmit()">
+  <button class="btn btn-primary col-6" [disabled]="userFormGroup.invalid" (click)="onSubmit()">
     Créer User
   </button>
 </form>
-
-
-<h2>User :</h2>
-<ul>
-  <li>{{user.nickname}}</li>
-  <li>{{user.email}}</li>
-</ul>

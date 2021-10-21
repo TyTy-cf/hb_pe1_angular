@@ -63,16 +63,69 @@
     </div>
   </div>
 
+  <div class="input-group">
+    <div class="col-6">
+      <input  [(ngModel)]="user.lastName"
+              [name]="'lastName'"
+              type="text"
+              class="form-control"
+              placeholder="LastName"
+      >
+
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div class="col-6">
+      <input  [(ngModel)]="user.firstName"
+              [name]="'firstName'"
+              type="text"
+              class="form-control"
+              placeholder="FirstName"
+      >
+
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div class="col-6">
+      <input  [(ngModel)]="user.address"
+              [name]="'address'"
+              type="text"
+              class="form-control"
+              placeholder="Address"
+      >
+
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div class="col-6">
+      <input  [(ngModel)]="user.postalCode"
+              [name]="'postalCode'"
+              type="text"
+              class="form-control"
+              placeholder="PostalCode"
+      >
+
+    </div>
+  </div>
+
+  <div class="input-group">
+    <div class="col-6">
+      <input  [(ngModel)]="user.city"
+              [name]="'city'"
+              type="text"
+              class="form-control"
+              placeholder="City"
+      >
+
+    </div>
+  </div>
+
   <!-- Ici on disable le bouton, si le formulaire n'est pas valide -->
   <!-- Un formulaire n'est pas valide tant que ses champs ne sont pas valide -->
-  <button class="btn btn-primary" type="submit" [disabled]="formUser.invalid">
+  <button class="btn btn-primary col-6" type="submit" [disabled]="formUser.invalid">
     Créer User
   </button>
 </form>
-
-
-<h2>User :</h2>
-<ul>
-  <li>{{user.nickname}}</li>
-  <li>{{user.email}}</li>
-</ul>

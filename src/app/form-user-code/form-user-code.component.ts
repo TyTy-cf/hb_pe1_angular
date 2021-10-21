@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../models/user/user";
 import {UserService} from "../../service/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-form-user-code',
@@ -14,7 +15,7 @@ export class FormUserCodeComponent implements OnInit {
   user: User = new User();
   existingEmail: boolean = false;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.userFormGroup = new FormGroup(
@@ -28,6 +29,21 @@ export class FormUserCodeComponent implements OnInit {
           this.user.email, [
             Validators.required
           ]
+        ),
+        _lastName: new FormControl(
+          this.user.lastName, []
+        ),
+        _firstName: new FormControl(
+          this.user.firstName, []
+        ),
+        _address: new FormControl(
+          this.user.address, []
+        ),
+        _postalCode: new FormControl(
+          this.user.postalCode, []
+        ),
+        _city: new FormControl(
+          this.user.city, []
         )
       }
     );
@@ -41,12 +57,37 @@ export class FormUserCodeComponent implements OnInit {
     return <AbstractControl>this.userFormGroup.get('_email');
   }
 
+  get lastName(): AbstractControl {
+    return <AbstractControl>this.userFormGroup.get('_lastName');
+  }
+
+  get firstName(): AbstractControl {
+    return <AbstractControl>this.userFormGroup.get('_firstName');
+  }
+
+  get address(): AbstractControl {
+    return <AbstractControl>this.userFormGroup.get('_address');
+  }
+
+  get postalCode(): AbstractControl {
+    return <AbstractControl>this.userFormGroup.get('_postalCode');
+  }
+
+  get city(): AbstractControl {
+    return <AbstractControl>this.userFormGroup.get('_city');
+  }
+
   onSubmit(): void {
     if (this.userService.findUserByEmail(this.email.value) === undefined) {
       this.user.nickname = this.nickname.value;
       this.user.email = this.email.value;
+      this.user.lastName = this.lastName.value;
+      this.user.firstName = this.firstName.value;
+      this.user.address = this.address.value;
+      this.user.postalCode = this.postalCode.value;
+      this.user.city = this.city.value;
       this.userService.addUser(this.user);
-      console.log(this.userService.arrayUser);
+      this.router.navigate(['/users']);
     } else {
       this.existingEmail = true;
     }

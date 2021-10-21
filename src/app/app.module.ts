@@ -13,8 +13,9 @@ import { DepartmentIndexComponent } from './department-index/department-index.co
 import { StudentComponent } from './student/student.component';
 import { CityIndexComponent } from './city-index/city-index.component';
 import { FormUserComponent } from './form-user/form-user.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AllMultiplicationTablesComponent } from './all-multiplication-tables/all-multiplication-tables.component';
+import { FormUserCodeComponent } from './form-user-code/form-user-code.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +31,13 @@ import { AllMultiplicationTablesComponent } from './all-multiplication-tables/al
     CityIndexComponent,
     FormUserComponent,
     AllMultiplicationTablesComponent,
+    FormUserCodeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

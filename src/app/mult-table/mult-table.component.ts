@@ -7,6 +7,8 @@ import {Component, Input} from '@angular/core';
 })
 export class MultTableComponent {
 
+  // Décoration Angular : indiquant que l'attribut attrDigit sera modifié par le component parent
+  // Communication : parent vers la fille
   @Input()
   attrDigit!: number;
 

@@ -33,7 +33,17 @@ export class UserService {
     this._arrayUser.push(user);
   }
 
+  /**
+   * On déclare une fonction de nom "findUserByEmail", qui a un paramètre de nom
+   * "email" et de type "string"
+   * La fonction renvoie soit un objet User, soit undefined
+   *
+   * @param email
+   */
   findUserByEmail(email: string): User|undefined {
+    // filter = créer un nouveau tableau, qui renvoie tous les éléments du tableau sur
+    // lequel on le place, et qui remplisse les conditions de la fonction fléchée
+    // ici c'est tous les utilisateurs dont l'email vaut l'email passé en paramètre
     const tmpArray = this._arrayUser.filter((user) => user.email === email);
     if (tmpArray.length > 0) {
       return tmpArray[0];

@@ -3,18 +3,18 @@
   <h2>Moyenne des étudiants</h2>
   <table class="table">
     <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Notes</th>
-      <th>Moyenne</th>
-    </tr>
+      <tr>
+        <th>Nom</th>
+        <th>Notes</th>
+        <th>Moyenne</th>
+      </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let student of arrayStudents">
-      <td>{{ student.name }}</td>
-      <td>{{ student.grades }}</td>
-      <td>{{ studentService.calcAverage(student.grades) }}</td>
-    </tr>
+      <tr *ngFor="let student of arrayStudents">
+        <td>{{ student.name }}</td>
+        <td>{{ student.grades }}</td>
+        <td>{{ studentService.calcAverage(student.grades) }}</td>
+      </tr>
     </tbody>
   </table>
 </div>

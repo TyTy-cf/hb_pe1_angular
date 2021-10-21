@@ -1,10 +1,17 @@
 
+<!-- ngForm = directive angular pour représenter un formulaire par le template -->
+<!-- #formUser = nom de l'alias pour le formulaire, c'est à dire que l'on peut
+ l'utiliser dans le template pour représenter le form -->
+<!-- (ngSubmit) = directive angular pour rediriger la soumission du form -->
 <form (ngSubmit)="onSubmit()" #formUser="ngForm">
-
-  <!-- [class.is-invalid]="inputUserName.touched && inputUserName.invalid" -->
-  <!-- On applique la classe is-invalid si le champ a été cliqué au moins une fois et qu'il est toujours invalide -->
   <div class="input-group">
     <div class="col-6">
+      <!-- [(ngModel)] = directive angular qui permet de faire un binding (liaison)
+          entre l'input sur lequel il est mis et un attribut (ici l'attribut nickname du user)
+       -->
+      <!-- #inputUserNickname="ngModel" => alias de l'input (champ du form) -->
+      <!-- [class.is-invalid]="inputUserName.touched && inputUserName.invalid" -->
+      <!-- On applique la classe is-invalid si le champ a été cliqué au moins une fois (touched) et qu'il est toujours invalide -->
       <input  [(ngModel)]="user.nickname"
               [name]="'nickname'"
               #inputUserNickname="ngModel"
@@ -19,6 +26,8 @@
     <div *ngIf="inputUserNickname.invalid && (inputUserNickname.dirty || inputUserNickname.touched)"
       class="p-2 ms-2 col-5 alert-danger"
     >
+      <!-- required et minlength sont des validations html -->
+      <!-- Angular se base dessus pour vérifier la validité d'un champ -->
       <div *ngIf="inputUserNickname.errors?.required">
         Le nickname est requis
       </div>
@@ -54,10 +63,13 @@
     </div>
   </div>
 
+  <!-- Ici on disable le bouton, si le formulaire n'est pas valide -->
+  <!-- Un formulaire n'est pas valide tant que ses champs ne sont pas valide -->
   <button class="btn btn-primary" type="submit" [disabled]="formUser.invalid">
     Créer User
   </button>
 </form>
+
 
 <h2>User :</h2>
 <ul>

@@ -19,6 +19,9 @@ import { FormUserCodeComponent } from './form-user-code/form-user-code.component
 import { UserIndexComponent } from './user-index/user-index.component';
 import { YahtzeeScoreComponent } from './yahtzee-score/yahtzee-score.component';
 import { UserAccountComponent } from './user-account/user-account.component';
+import {HttpClientModule} from "@angular/common/http";
+import { PokemonComponent } from './pokemon/pokemon.component';
+import { PokemonDetailedComponent } from './pokemon-detailed/pokemon-detailed.component';
 
 @NgModule({
   declarations: [
@@ -38,12 +41,15 @@ import { UserAccountComponent } from './user-account/user-account.component';
     UserIndexComponent,
     YahtzeeScoreComponent,
     UserAccountComponent,
+    PokemonComponent,
+    PokemonDetailedComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,10 @@
+
+<h2>{{pokemon.name | uppercase}} #{{pokemon.order}}</h2>
+<div class="row">
+  <div class="col-6" *ngFor="let type of pokemon.types">
+    <img class="img-fluid" src="/assets/pkmn-types/type-{{type.type.name}}.png">
+  </div>
+</div>
+<div>
+  <img class="img-fluid" [src]="pokemon.sprites.other['official-artwork'].front_default">
+</div>

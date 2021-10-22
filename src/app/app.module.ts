@@ -18,6 +18,7 @@ import { AllMultiplicationTablesComponent } from './all-multiplication-tables/al
 import { FormUserCodeComponent } from './form-user-code/form-user-code.component';
 import { UserIndexComponent } from './user-index/user-index.component';
 import { YahtzeeScoreComponent } from './yahtzee-score/yahtzee-score.component';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { YahtzeeScoreComponent } from './yahtzee-score/yahtzee-score.component';
     FormUserCodeComponent,
     UserIndexComponent,
     YahtzeeScoreComponent,
+    UserAccountComponent,
   ],
   imports: [
     BrowserModule,

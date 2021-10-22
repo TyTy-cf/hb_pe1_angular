@@ -12,6 +12,7 @@ import {AllMultiplicationTablesComponent} from "./all-multiplication-tables/all-
 import {FormUserCodeComponent} from "./form-user-code/form-user-code.component";
 import {UserIndexComponent} from "./user-index/user-index.component";
 import {YahtzeeScoreComponent} from "./yahtzee-score/yahtzee-score.component";
+import {UserAccountComponent} from "./user-account/user-account.component";
 
 // Les routes de l'application
 // On a un chemin (path) qui est le nom affiché dans l'URL du navigateur
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'create-user', component: FormUserComponent },
   { path: 'create-user-code', component: FormUserCodeComponent },
   { path: 'users', component: UserIndexComponent },
+  { path: 'users/:email', component: UserAccountComponent },
 ];
 
 @NgModule({

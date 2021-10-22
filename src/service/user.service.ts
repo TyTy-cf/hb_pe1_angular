@@ -40,7 +40,7 @@ export class UserService {
    *
    * @param email
    */
-  findUserByEmail(email: string): User|undefined {
+  findUserByEmail(email: string): User {
     // filter = créer un nouveau tableau, qui renvoie tous les éléments du tableau sur
     // lequel on le place, et qui remplisse les conditions de la fonction fléchée
     // ici c'est tous les utilisateurs dont l'email vaut l'email passé en paramètre
@@ -48,7 +48,7 @@ export class UserService {
     if (tmpArray.length > 0) {
       return tmpArray[0];
     }
-    return undefined;
+    return new User();
   }
 
 }

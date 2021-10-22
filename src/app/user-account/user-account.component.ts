@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {UserService} from "../../service/user.service";
+import {User} from "../../models/user/user";
 
 @Component({
   selector: 'app-user-account',
@@ -7,14 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserAccountComponent implements OnInit {
 
-  constructor() { }
+  user!: User;
+  isEdition: boolean = false;
+
+  constructor(private activatedRoute: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit(): void {
-    // Récupérer l'email passé par la route et récupérer le User qui correspond à cette route
-  }
-
-  editUser(): void {
-    // passer un booléen à true, afin de masquer le récap des informations du user
-    // et d'afficher un formulaire pour modifier le user
+    this.activatedRoute.params.subscribe((param) => {
+      this.user = this.userService.findUserByEmail(param.email);
+    })
   }
 }

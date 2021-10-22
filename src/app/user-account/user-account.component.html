@@ -1,10 +1,51 @@
-<p>user-account works!</p>
 
-Page de récapitulatif des informations de l'utilisateur
-(Affichage tous ses attributs)
+<div class="row">
+  <button class="col-5" (click)="isEdition = !isEdition">Modifier les informations de l'utilisateur</button>
+</div>
 
-<button (click)="editUser()">Modifier les informations de l'utilisateur</button>
+<div class="col-5 mt-4">
+  <table *ngIf="!isEdition; else formEdition" class="table table-striped">
+    <tbody>
+      <tr>
+        <th>Nickname</th>
+        <td>{{user?.nickname}}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{user?.email}}</td>
+      </tr>
+      <tr>
+        <th>LastName</th>
+        <td>{{user?.lastName}}</td>
+      </tr>
+      <tr>
+        <th>FirstName</th>
+        <td>{{user?.firstName}}</td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td>{{user?.address}}</td>
+      </tr>
+      <tr>
+        <th>PostalCode</th>
+        <td>{{user?.postalCode}}</td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td>{{user?.city}}</td>
+      </tr>
+      <tr>
+        <th>Country</th>
+        <td>{{user?.country?.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-Lastname : user.lastname
-Firstname : user.firstname
-etc
+<ng-template #formEdition>
+  <app-form-user-code
+    [user]="user" [isEditMode]="true" (eventIsEdition)="isEdition = false"
+  ></app-form-user-code>
+</ng-template>
+
+

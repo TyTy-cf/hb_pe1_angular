@@ -114,6 +114,7 @@
   </div>
 
   <button class="btn btn-primary col-6" [disabled]="userFormGroup.invalid" (click)="onSubmit()">
-    Créer User
+    <span [hidden]="!isEditMode">Modifier User</span>
+    <span [hidden]="isEditMode">Créer User</span>
   </button>
 </form>

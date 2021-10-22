@@ -1,0 +1,13 @@
+
+.table tbody > tr > td, th {
+  border-bottom: 0.08em solid #800040;
+}
+
+.table tbody > tr > td {
+  text-align: start;
+  padding-left: 1em;
+}
+.table tbody > tr > th {
+  text-align: end;
+  padding-right: 1em;
+}

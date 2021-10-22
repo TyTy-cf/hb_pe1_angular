@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../models/user/user";
 import {UserService} from "../../service/user.service";
@@ -12,8 +12,16 @@ import {CountryService} from "../../service/country.service";
 })
 export class FormUserCodeComponent implements OnInit {
 
-  userFormGroup!: FormGroup;
+  @Input()
   user: User = new User();
+
+  @Input()
+  isEditMode: boolean = false;
+
+  @Output()
+  eventIsEdition: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  userFormGroup!: FormGroup;
   existingEmail: boolean = false;
 
   constructor(
@@ -90,7 +98,7 @@ export class FormUserCodeComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.userService.findUserByEmail(this.email.value) === undefined) {
+    if (this.userService.findUserByEmail(this.email.value) === undefined || this.isEditMode) {
       this.user.nickname = this.nickname.value;
       this.user.email = this.email.value;
       this.user.lastName = this.lastName.value;
@@ -99,8 +107,17 @@ export class FormUserCodeComponent implements OnInit {
       this.user.postalCode = this.postalCode.value;
       this.user.city = this.city.value;
       this.user.country = this.country.value;
-      this.userService.addUser(this.user);
-      this.router.navigate(['/users']);
+      // this.isEditMode => provient de l'input du parent, par défaut est false
+      if (this.isEditMode) {
+        // si nous sommes en édition, on remonte l'info au parent qu'il doit réafficher
+        // les infos du user
+        this.eventIsEdition.emit(false);
+      } else {
+        // On est en création, donc on sauve notre nouvel utilisateur
+        // Et on retourne à la vue des users
+        this.userService.addUser(this.user);
+        this.router.navigate(['/users']);
+      }
     } else {
       this.existingEmail = true;
     }

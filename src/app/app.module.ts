@@ -17,6 +17,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AllMultiplicationTablesComponent } from './all-multiplication-tables/all-multiplication-tables.component';
 import { FormUserCodeComponent } from './form-user-code/form-user-code.component';
 import { UserIndexComponent } from './user-index/user-index.component';
+import { YahtzeeScoreComponent } from './yahtzee-score/yahtzee-score.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UserIndexComponent } from './user-index/user-index.component';
     AllMultiplicationTablesComponent,
     FormUserCodeComponent,
     UserIndexComponent,
+    YahtzeeScoreComponent,
   ],
   imports: [
     BrowserModule,

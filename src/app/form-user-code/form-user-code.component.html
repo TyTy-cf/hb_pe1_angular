@@ -98,6 +98,12 @@
     </div>
   </div>
 
+  <div class="col-6">
+    <select [formControlName]="'_country'" class="form-select">
+      <option *ngFor="let country of countryService.arrayCountries" [ngValue]="country">{{country.name}}</option>
+    </select>
+  </div>
+
   <div [hidden]="!existingEmail" class="p-2 ms-2 alert-danger">
     L'email existe déjà
   </div>

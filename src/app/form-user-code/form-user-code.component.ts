@@ -3,6 +3,7 @@ import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/form
 import {User} from "../../models/user/user";
 import {UserService} from "../../service/user.service";
 import {Router} from "@angular/router";
+import {CountryService} from "../../service/country.service";
 
 @Component({
   selector: 'app-form-user-code',
@@ -15,7 +16,11 @@ export class FormUserCodeComponent implements OnInit {
   user: User = new User();
   existingEmail: boolean = false;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(
+    private userService: UserService,
+    public countryService: CountryService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.userFormGroup = new FormGroup(
@@ -44,6 +49,9 @@ export class FormUserCodeComponent implements OnInit {
         ),
         _city: new FormControl(
           this.user.city, []
+        ),
+        _country: new FormControl(
+          this.user.country, []
         )
       }
     );
@@ -77,6 +85,10 @@ export class FormUserCodeComponent implements OnInit {
     return <AbstractControl>this.userFormGroup.get('_city');
   }
 
+  get country(): AbstractControl {
+    return <AbstractControl>this.userFormGroup.get('_country');
+  }
+
   onSubmit(): void {
     if (this.userService.findUserByEmail(this.email.value) === undefined) {
       this.user.nickname = this.nickname.value;
@@ -86,6 +98,7 @@ export class FormUserCodeComponent implements OnInit {
       this.user.address = this.address.value;
       this.user.postalCode = this.postalCode.value;
       this.user.city = this.city.value;
+      this.user.country = this.country.value;
       this.userService.addUser(this.user);
       this.router.navigate(['/users']);
     } else {

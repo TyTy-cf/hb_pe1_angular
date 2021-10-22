@@ -11,6 +11,7 @@ import {FormUserComponent} from "./form-user/form-user.component";
 import {AllMultiplicationTablesComponent} from "./all-multiplication-tables/all-multiplication-tables.component";
 import {FormUserCodeComponent} from "./form-user-code/form-user-code.component";
 import {UserIndexComponent} from "./user-index/user-index.component";
+import {YahtzeeScoreComponent} from "./yahtzee-score/yahtzee-score.component";
 
 // Les routes de l'application
 // On a un chemin (path) qui est le nom affiché dans l'URL du navigateur
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'angular/cours', component: CoursComponent },
   { path: 'table-multiplication', component: AllMultiplicationTablesComponent },
   { path: 'angular/compteur', component: CompteurComponent },
-  { path: 'yahtzee', component: YahtzeeComponent },
+  { path: 'yahtzee', component: YahtzeeScoreComponent },
   { path: 'regions', component: RegionIndexComponent },
   { path: 'regions/:code/departments', component: DepartmentIndexComponent },
   { path: 'regions/:codeReg/departments/:codeDpt/cities', component: CityIndexComponent },

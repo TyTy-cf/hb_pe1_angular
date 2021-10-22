@@ -1,6 +1,7 @@
 
 <div class="row">
   <div class="col-20 mb-5" *ngFor="let digit of arrayMultiplicationTable">
+    <p>Table de : {{digit}}</p>
     <app-mult-table [attrDigit]="digit"></app-mult-table>
   </div>
 </div>

@@ -1,3 +1,4 @@
+import {Country} from "./country";
 
 export class User {
 
@@ -6,8 +7,17 @@ export class User {
   private _lastName!: string;
   private _firstName!: string;
   private _address!: string;
-  private _postalCode !: string;
-  private _city  !: string;
+  private _postalCode!: string;
+  private _city!: string;
+  private _country!: Country;
+
+  get country(): Country {
+    return this._country;
+  }
+
+  set country(value: Country) {
+    this._country = value;
+  }
 
   get nickname(): string {
     return this._nickname;

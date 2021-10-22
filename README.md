@@ -271,7 +271,7 @@ Vous devez afficher dans un component 'chess' le plateau du jeu d'échec avec ce
 Une fois avoir crééer le plateau de jeu... Il faut faire bouger les pièces :D
 
 
-### 11. Faire un jeu de 56 cartes
+### 11. Faire un jeu de 52 cartes
 
 
 Faire une classe métier qui représente un jeu de carte, comment feriez vous ?

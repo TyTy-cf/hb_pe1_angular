@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, OnDestroy} from '@angular/core';
 
 @Component({
   selector: 'app-compteur',
   templateUrl: './compteur.component.html',
   styleUrls: ['./compteur.component.scss']
 })
-export class CompteurComponent {
+export class CompteurComponent implements AfterViewInit, OnDestroy {
 
   /***********************************************/
   /**************** Exo - Compteur ***************/
@@ -19,6 +19,14 @@ export class CompteurComponent {
 
   add(value: number): void {
     this.compteur += value;
+  }
+
+  ngAfterViewInit(): void {
+    document.querySelector('body')!.classList.add('blue-duck');
+  }
+
+  ngOnDestroy(): void {
+    document.querySelector('body')!.classList.remove('blue-duck');
   }
 
 }

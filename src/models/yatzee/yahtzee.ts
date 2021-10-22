@@ -3,12 +3,22 @@ import {Dice} from "./dice";
 export class Yahtzee {
 
   private _myDice: Array<Dice> = [];
+  private _round: number = 0;
 
   throwDice(): void {
     this._myDice = [];
     for (let i = 1; i <= 5; i++) {
       this._myDice.push(new Dice());
     }
+    this.round++;
+  }
+
+  get round(): number {
+    return this._round;
+  }
+
+  set round(value: number) {
+    this._round = value;
   }
 
   /**

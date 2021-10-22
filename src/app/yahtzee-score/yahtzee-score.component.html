@@ -1,0 +1,4 @@
+
+<h2 [hidden]="round === 0">Début de partie, lancé : #{{round}}</h2>
+
+<app-yahtzee (yahtzeeEmitter)="getYahtzeeRound($event)"></app-yahtzee>

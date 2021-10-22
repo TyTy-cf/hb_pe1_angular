@@ -1,6 +1,6 @@
 
 <div class="container-compteur yatzee-height">
-    <img *ngFor="let diceOfYatzee of yatzee.myDice"
+    <img *ngFor="let diceOfYatzee of yahtzee.myDice"
           [src]="diceOfYatzee.image"
           [alt]="diceOfYatzee.value"
           (click)="diceOfYatzee.isSelected = !diceOfYatzee.isSelected"
@@ -8,6 +8,6 @@
     >
 </div>
 <div class="mt-2">
-  <button (click)="yatzee.throwDice()">Lancer dés</button>
-  <button [hidden]="yatzee.myDice.length === 0" (click)="yatzee.rerollDice()">Relancer les dés</button>
+  <button (click)="throwDice()">Lancer dés</button>
+  <button [hidden]="yahtzee.myDice.length === 0" (click)="yahtzee.rerollDice()">Relancer les dés</button>
 </div>

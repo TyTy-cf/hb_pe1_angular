@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Yahtzee} from "../../models/yatzee/yahtzee";
 
 @Component({
@@ -12,6 +12,14 @@ export class YahtzeeComponent {
   /**************** Exo - Yahtzee ***************/
   /***********************************************/
 
-  yatzee: Yahtzee = new Yahtzee();
+  @Output()
+  yahtzeeEmitter: EventEmitter<Yahtzee> = new EventEmitter<Yahtzee>();
+
+  yahtzee: Yahtzee = new Yahtzee();
+
+  throwDice(): void {
+    this.yahtzee.throwDice();
+    this.yahtzeeEmitter.emit(this.yahtzee);
+  }
 
 }

@@ -100,7 +100,12 @@
 
   <div class="col-6">
     <select [formControlName]="'_country'" class="form-select">
-      <option *ngFor="let country of countryService.arrayCountries" [ngValue]="country">{{country.name}}</option>
+      <option [ngValue]="null" disabled>Select a country</option>
+      <option *ngFor="let country of countryService.arrayCountries"
+              [ngValue]="country"
+      >
+        {{country.name}}
+      </option>
     </select>
   </div>
 

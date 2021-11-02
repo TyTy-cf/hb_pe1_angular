@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpPokeApiService} from "../../service/http-poke-api.service";
-import {PokeApiMainJson} from "../../models/pokemon/poke-api-main-json";
+import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {IconDefinition} from "@fortawesome/fontawesome-svg-core";
 
 @Component({
   selector: 'app-pokemon',
@@ -11,6 +12,8 @@ export class PokemonComponent implements OnInit {
 
   limit: number = 0;
   maxLimit: number = 0;
+  faArrowLeft: IconDefinition = faArrowLeft;
+  faArrowRight: IconDefinition = faArrowRight;
 
   constructor(public httpPokeApiService: HttpPokeApiService) { }
 

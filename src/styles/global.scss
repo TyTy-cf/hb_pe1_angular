@@ -80,3 +80,12 @@ p {
   }
 }
 
+.icons {
+  color: black;
+  &:hover {
+    fa-icon {
+      color: antiquewhite;
+    }
+  }
+}
+

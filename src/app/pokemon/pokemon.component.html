@@ -1,7 +1,18 @@
 
 <div class="row">
-  <button class="col-6" [disabled]="limit === 0" (click)="previousPokemons()">Previous</button>
-  <button class="col-6" [disabled]="limit+20 >= httpPokeApiService.maxCount" (click)="nextPokemons()">Next</button>
+  <button
+          class="col-6 icons"
+          [disabled]="limit === 0"
+          (click)="previousPokemons()"
+  >
+    <fa-icon class="btn" [icon]="faArrowLeft"></fa-icon>
+  </button>
+  <button class="col-6 icons"
+          [disabled]="limit+20 >= httpPokeApiService.maxCount"
+          (click)="nextPokemons()"
+  >
+    <fa-icon class="btn" [icon]="faArrowRight"></fa-icon>
+  </button>
 </div>
 
 <div class="row my-5">

@@ -22,6 +22,7 @@ import { UserAccountComponent } from './user-account/user-account.component';
 import {HttpClientModule} from "@angular/common/http";
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { PokemonDetailedComponent } from './pokemon-detailed/pokemon-detailed.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PokemonDetailedComponent } from './pokemon-detailed/pokemon-detailed.co
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
